@@ -1,3 +1,3 @@
-| Task | Linux Command | PowerShell Equivalent | CMD Equivalent |
+| Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
 | ---- | ---- | ---- | ---- |
-| Process Info | ps | Get-Process | tasklist |
+| Process Info | ps | Get-Process | tasklist | get information about processes |
