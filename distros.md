@@ -11,7 +11,7 @@
 
 ## Package Managers
 | Short Name | Full Name | Based on Package Manger | file types | 
-| ---------- | --------- | ------ |
+| ---------- | --------- | ------ | ----- |
 | yum | Yellowdog Updater Modified / Your Update Manager | Wrapper around RPM |
 | rpm | Red Hat Package Manager | |
 | apt | Advanced Package Tool | | dpkg Debian Package Management |
