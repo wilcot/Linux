@@ -22,3 +22,6 @@ pidof bash -s
 ```powershell
 Get-Process bash | Select-Object -First 1 -ExpandProperty Id
 ```
+
+## Links
+- https://www.cyberciti.biz/faq/show-all-running-processes-in-linux/
