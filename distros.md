@@ -4,6 +4,7 @@
 | ---- | ----------- | --------------- |
 | Ubuntu | | |
 | Debian | | |
+| CentOS | | |
 | Amazon Linux | |
 | Red Hat Enterprise Linux (RHEL) | | |
 | Fedora | | |
