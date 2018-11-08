@@ -1,6 +1,6 @@
 | Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
 | ---- | ---- | ---- | ---- |
-| ps | Get-Process | tasklist | get information about processes | Process Info |
+| ps, pidof | Get-Process | tasklist | get information about processes | Process Info |
 | kill, killall, pkill | Stop-Process | taskkill |  Terminates a Process |
 | grep | Select-String | FINDSTR | Search a file or piped output for regex matches. Returns lines that match |
 | awk | | | |
@@ -10,3 +10,4 @@
 | less | | | |
 | cat | | | |
 | service, systemctl | | | |
+| dmesg | | | Read system log messages |
