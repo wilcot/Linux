@@ -5,4 +5,5 @@
 | Ubuntu | | |
 | Debian | | |
 | Amazon Linux | |
-| Red Hat Linux (rhel) | | |
+| Red Hat Enterprise Linux (RHEL) | | |
+| Fedora | | |
