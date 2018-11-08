@@ -1,3 +1,4 @@
 | Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
 | ---- | ---- | ---- | ---- |
-| Process Info | ps | Get-Process | tasklist | get information about processes |
+| ps | Get-Process | tasklist | get information about processes | Process Info |
+| kill, killall, pkill | Stop-Process | taskkill |  Terminates a Process |
