@@ -13,3 +13,4 @@
 | service, systemctl | | | |
 | dmesg | | | Read system log messages |
 | chown | Set-Acl (no PSCore support) | | Change the owner of a file or folder |
+| chmod | Set-Acl (no PSCore support) | | Change the owner of a file or folder |
