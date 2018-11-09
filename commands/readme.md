@@ -4,13 +4,12 @@
 | kill, killall, pkill | Stop-Process | taskkill |  Terminates a Process |
 | grep | Select-String | FINDSTR | Search a file or piped output for regex matches. Returns lines that match |
 | [awk](./awk.md) | A mixture of the following commands: `Get-Content, Select-String, Foreach-Object` | | Processes input from an app or file and processes text |
-| sed | | | |
+| sed | | | Edits a streat of text |
 | curl | Invoke-WebRequest | | |
-| tail | Get-Content -Tail | | Gets the last portions of a file |
+| less, tail | Get-Content -Tail | | Gets the last portions of a file |
 | head | Get-Content -TotalCount | | Gets the first portions of a file |
-| less | | | |
 | cat | Get-Content | | Get entire contents of file |
 | service, systemctl | | | |
-| dmesg | | | Read system log messages |
-| chown | Set-Acl (no PSCore support) | | Change the owner of a file or folder |
-| chmod | Set-Acl (no PSCore support) | | Change the owner of a file or folder |
+| dmesg | Get-EventLog (No PSCore support) | | Read system log messages |
+| chown | Set-Acl (No PSCore support) | | Change the owner of a file or folder |
+| chmod | Set-Acl (No PSCore support) | | Change the owner of a file or folder |
