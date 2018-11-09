@@ -1,0 +1,5 @@
+# Terms
+
+- bdsd
+
+- Unix-Like

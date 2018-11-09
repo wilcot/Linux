@@ -1,0 +1,90 @@
+Parameters:
+  EC2AmiId:
+    Type: AWS::EC2::Image::Id
+    Default: ami-0e6d2e8684d4ccb3e
+    Description: "Amazon Machine Image ID"
+  EC2InstanceType:
+    Type: String
+    Default: t3.micro
+    Description: "Instance type for Ghost blog"
+  KeyPair: 
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Key Pair used for web server
+  CidrToAccessServer:
+    Type: String
+    Description: Cidr to allow ingress/egreee to EC2 Instance
+    Default: 0.0.0.0/0
+Resources:
+  ServerIamRole: 
+      Type: "AWS::IAM::Role"
+      Properties: 
+        AssumeRolePolicyDocument: 
+          Version: "2012-10-17"
+          Statement: 
+            - 
+              Effect: "Allow"
+              Principal: 
+                Service: 
+                  - "ec2.amazonaws.com"
+              Action: 
+                - "sts:AssumeRole"
+        Path: "/"
+  ServerIamPolicy: 
+    Type: "AWS::IAM::Policy"
+    Properties:
+      PolicyName: Inst
+      PolicyDocument: 
+        Version: "2012-10-17"
+        Statement: 
+          - 
+            Effect: "Allow"
+            Action: 
+              - "S3:*"
+              - "SSM:*"
+            Resource: "*"
+      Roles: 
+        - 
+          Ref: "ServerIamRole"
+  ServerInstanceProfile:
+    Type: "AWS::IAM::InstanceProfile"
+    DependsOn:
+      - ServerIamPolicy
+    Properties: 
+      Roles:
+        - !Ref ServerIamRole
+  Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId:
+        Ref: EC2AmiId
+      InstanceType:
+        Ref: EC2InstanceType
+      SecurityGroups:
+        - !Ref ServerSecurityGroup
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          sudo yum update -y
+      KeyName:
+        Ref: KeyPair
+      IamInstanceProfile: !Ref ServerInstanceProfile
+  ServerSecurityGroup:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: Security group for EC2 Instance Test system
+      SecurityGroupIngress: 
+        - 
+          IpProtocol: "tcp"
+          FromPort: 80
+          ToPort: 80
+          CidrIp: !Ref CidrToAccessServer
+        - 
+          IpProtocol: "tcp"
+          FromPort: 443
+          ToPort: 443
+          CidrIp: !Ref CidrToAccessServer
+        - 
+          IpProtocol: "tcp"
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref CidrToAccessServer
