@@ -12,3 +12,4 @@
 | cat | Get-Content | | Get entire contents of file |
 | service, systemctl | | | |
 | dmesg | | | Read system log messages |
+| chown | Set-Acl (no PSCore support) | | Change the owner of a file or folder |
