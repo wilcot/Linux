@@ -5,6 +5,8 @@
 | Ubuntu | Beginner fiendly distribution | Debian | Most popular Linux distribution |
 | Debian | | |
 | SUSE | | |
+| FreeBSD | | |
+| Solaris | | |
 | Linux Mint | | |
 | Fedora | RedHat sponsored, developed by community | | Quick release cycles, shorter LTS (faster development) |
 | Red Hat Enterprise Linux (RHEL) | Enterprise Linux Distrobution: expen$$ive! | Fedora | |
