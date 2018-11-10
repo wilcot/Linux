@@ -7,7 +7,7 @@ Parameters:
     Type: String
     Default: t3.micro
     Description: "Instance type for Ghost blog"
-  KeyPair: 
+  KeyPair:
     Type: AWS::EC2::KeyPair::KeyName
     Description: Key Pair used for web server
   CidrToAccessServer:
@@ -15,41 +15,41 @@ Parameters:
     Description: Cidr to allow ingress/egreee to EC2 Instance
     Default: 0.0.0.0/0
 Resources:
-  ServerIamRole: 
+  ServerIamRole:
       Type: "AWS::IAM::Role"
-      Properties: 
-        AssumeRolePolicyDocument: 
+      Properties:
+        AssumeRolePolicyDocument:
           Version: "2012-10-17"
-          Statement: 
-            - 
+          Statement:
+            -
               Effect: "Allow"
-              Principal: 
-                Service: 
+              Principal:
+                Service:
                   - "ec2.amazonaws.com"
-              Action: 
+              Action:
                 - "sts:AssumeRole"
         Path: "/"
-  ServerIamPolicy: 
+  ServerIamPolicy:
     Type: "AWS::IAM::Policy"
     Properties:
       PolicyName: Inst
-      PolicyDocument: 
+      PolicyDocument:
         Version: "2012-10-17"
-        Statement: 
-          - 
+        Statement:
+          -
             Effect: "Allow"
-            Action: 
+            Action:
               - "S3:*"
               - "SSM:*"
             Resource: "*"
-      Roles: 
-        - 
+      Roles:
+        -
           Ref: "ServerIamRole"
   ServerInstanceProfile:
     Type: "AWS::IAM::InstanceProfile"
     DependsOn:
       - ServerIamPolicy
-    Properties: 
+    Properties:
       Roles:
         - !Ref ServerIamRole
   Instance:
@@ -64,7 +64,14 @@ Resources:
       UserData:
         Fn::Base64: |
           #!/bin/bash
-          sudo yum update -y
+          sudo yum update -y # updates
+          sudo amazon-linux-extras install epel -y #install extra packages
+          sudo yum install python-pip -y #pip
+          sudo pip install pytest -y
+          # Register the Microsoft RedHat repository
+          curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
+          # Install PowerShell
+          sudo yum install -y powershell
       KeyName:
         Ref: KeyPair
       IamInstanceProfile: !Ref ServerInstanceProfile
@@ -72,18 +79,18 @@ Resources:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
       GroupDescription: Security group for EC2 Instance Test system
-      SecurityGroupIngress: 
-        - 
+      SecurityGroupIngress:
+        -
           IpProtocol: "tcp"
           FromPort: 80
           ToPort: 80
           CidrIp: !Ref CidrToAccessServer
-        - 
+        -
           IpProtocol: "tcp"
           FromPort: 443
           ToPort: 443
           CidrIp: !Ref CidrToAccessServer
-        - 
+        -
           IpProtocol: "tcp"
           FromPort: 22
           ToPort: 22
