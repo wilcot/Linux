@@ -66,8 +66,10 @@ Resources:
           #!/bin/bash
           sudo yum update -y # updates
           sudo amazon-linux-extras install epel -y #install extra packages
-          sudo yum install python-pip -y #pip
-          sudo pip install pytest
+          sudo yum install python3 -y
+          sudo pip3 install pytest # python unit test framework
+          sudo pip3 install nginx
+          alias python="python3" # lets use python3 as default
           # Register the Microsoft RedHat repository
           curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
           # Install PowerShell
