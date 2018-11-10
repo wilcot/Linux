@@ -4,7 +4,7 @@
 | ---- | ----------- | --------------- | -------- |
 | Ubuntu | Beginner fiendly distribution | Debian | Most popular Linux distribution |
 | Debian | | |
-| SUSE | | |
+| SUSE | Managed by Novell at one point. Enterprise offering with free openSUSE distro | |
 | FreeBSD | | |
 | Solaris | | |
 | Linux Mint | | |
@@ -19,5 +19,6 @@
 | yum | Yellowdog Updater Modified / Your Update Manager | Wrapper around RPM |
 | rpm | Red Hat Package Manager | |
 | apt | Advanced Package Tool | | dpkg Debian Package Management |
+| YaST | Yet another Setup Tool | | |
 ## Links
 - [About Fedora, CentOs, RedHat](https://danielmiessler.com/study/fedora_redhat_centos/)
