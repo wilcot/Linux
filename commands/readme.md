@@ -12,4 +12,5 @@
 | service, systemctl | | | |
 | dmesg | Get-EventLog (No PSCore support) | | Read system log messages |
 | chown | Set-Acl (No PSCore support) | | Change the owner of a file or folder |
-| chmod | Set-Acl (No PSCore support) | | Change the owner of a file or folder |
+| chmod | Set-Acl (No PSCore support) | | Change the permissions of a file or folder |
+| pwd | (Get-Location).Path | cd | Get the current working directory |

@@ -67,7 +67,7 @@ Resources:
           sudo yum update -y # updates
           sudo amazon-linux-extras install epel -y #install extra packages
           sudo yum install python-pip -y #pip
-          sudo pip install pytest -y
+          sudo pip install pytest
           # Register the Microsoft RedHat repository
           curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
           # Install PowerShell
