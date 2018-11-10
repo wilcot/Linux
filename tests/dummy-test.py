@@ -1,5 +1,9 @@
 import subprocess as sp
 
+def run_bash_command(command):
+    result = sp.check_output(['bash', '-c', command])
+    return result
+
 def format_powershell_string(string):
     return string.replace("\n", "")
     
