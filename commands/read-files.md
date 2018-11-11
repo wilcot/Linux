@@ -7,12 +7,16 @@ Searches plain-text documents using a regular expression and returns matching li
 
 ### Examples
 Search the yum log for the word 'amazon'. The -i switch will search case insensitively
+
 `cat /var/log/yum.log | grep -i "amazon"`
 
 
 Search the yum log add return additional lines surrounding the match
+
 `cat /var/log/yum.log | grep -i "amazon -C 3"` # context of three lines
+
 `cat /var/log/yum.log | grep -i "amazon -B 4"` # prints 4 lines before the hit
+
 `cat /var/log/yum.log | grep -i "amazon -A 4"` # prints 4 of lines after the hit
 
 
