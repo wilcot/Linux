@@ -10,10 +10,11 @@ Search the yum log for the word 'amazon'. The -i switch will search case insensi
 
 `cat /var/log/yum.log | grep -i "amazon"`
 
+`grep -i "amazon" /var/log/yum.log` # grep can also take the path as an argument instead of being piped in
 
 Search the yum log add return additional lines surrounding the match
 
-`cat /var/log/yum.log | grep -i "amazon -C 3"` # context of three lines
+`cat /var/log/yum.log | grep -i "amazon -C 3"` # context of three lines (3 lines before, 3 lines after)
 
 `cat /var/log/yum.log | grep -i "amazon -B 4"` # prints 4 lines before the hit
 
