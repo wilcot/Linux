@@ -4,3 +4,4 @@
 | Tools and Optional Packages | `/opts` | `c:\program files` (? - no real equivalent) |
 | User database | `/etc/passwd` | |
 | System Configuration Directory | `/etc` | Windows Registry |
+| User Directory | `/home/[username]` | `c:\users\[username]` |
