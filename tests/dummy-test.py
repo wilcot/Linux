@@ -1,3 +1,4 @@
+import pytest
 import subprocess as sp
 
 def run_bash_command(command):
@@ -27,3 +28,18 @@ def test_try_powershell_string():
 
 def test_starting_outzzz():
     assert 1 == 1
+
+
+@pytest.mark.incremental
+class TestIncremental(object):
+    def test_pass(self):
+        pass
+
+    def test_fail(self):
+        assert 0
+
+    def test_pass_but_skipped(self):
+        pass
+
+def test_should_pass():
+    pass

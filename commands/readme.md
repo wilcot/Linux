@@ -14,9 +14,12 @@
 | chown | Set-Acl (No PSCore support) | | Change the owner of a file or folder |
 | chmod | Set-Acl (No PSCore support) | | Change the permissions of a file or folder |
 | pwd | (Get-Location).Path | cd | Get the current working directory |
+| [ls](./ls.md) | Get-ChildItem | dir | Get a listing of a directory |
 
 ## User and Groups
 
 | Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
+| ---- | ---- | ---- | ---- |
 | useradd, adduser | New-LocalUser (No Linux Support) | net user [username] [password] /add | Add a local user |
+| userdel | Remove-LocalUser (No Linux Support ) | net user [username] /delete | Remove a local user |
 | gentent passwd| Get-LocalUser | | Look up local user | 
