@@ -20,6 +20,14 @@ Search the yum log add return additional lines surrounding the match
 
 `cat /var/log/yum.log | grep -i "amazon -A 4"` # prints 4 of lines after the hit
 
+## rm
+Remove files and directories from the file system
+
+### Examples
+
+`rm ./testfile.py` # deletes the file testfile.py
+
+`rm -r ./testDirectory` # delete the directory (r flag means recursive)
 
 ## Links
 [On the differences between less vs tail](https://www.brianstorti.com/stop-using-tail/)

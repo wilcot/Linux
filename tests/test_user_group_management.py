@@ -14,7 +14,7 @@ def run_bash_command(command,suppressErrorAndReturnOutput = False):
 def setup_test_users(request):
     testUserNames = ['testuser1', 'testuser2']
     for username in testUserNames:
-        run_bash_command(f"sudo useradd {username} -m")
+        run_bash_command(f"sudo useradd {username}")
 
     def teardown_user():
         for username in testUserNames:
@@ -47,3 +47,28 @@ def test_delete_usertest2_and_validate(setup_test_users):
     result = run_bash_command('getent passwd testuser2', True)
     print(result)
     assert 'testuser2' not in str(result)
+
+
+@pytest.mark.incremental
+class Test_Create_User_And_HomeDir(object):
+    username = 'userWithHomeDirectory'
+    def test_create_user(self):
+        run_bash_command(f"sudo useradd {self.username} -m")
+        pass
+    
+    def test_validate_user_exists(self):
+        result = run_bash_command(f"getent passwd {self.username}")
+        assert self.username in str(result)
+
+    def test_validate_home_dir_exists(self):
+        result = run_bash_command(f"if [ -d /home/{self.username} ]; then echo \"1\"; else echo \"0\"; fi")
+        print(result)
+        assert bool(int(result))
+
+    def test_remove_user(self):
+        run_bash_command(f"sudo userdel {self.username} -r")
+    
+    def test_validate_home_dir_deleted(self):
+        result = run_bash_command(f"if [ -d /home/{self.username} ]; then echo \"1\"; else echo \"0\"; fi")
+        assert not bool(int(result))
+        
