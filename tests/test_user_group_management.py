@@ -2,7 +2,7 @@ import pytest
 import subprocess as sp
 def run_bash_command(command,suppressErrorAndReturnOutput = False):
     try:
-        result = sp.check_output(['bash', '-c', command])
+        result = sp.check_output(command,shell=True)
         return result
     except sp.CalledProcessError as exception:
         if suppressErrorAndReturnOutput:
@@ -28,6 +28,18 @@ def setup_test_users(request):
 def test_validate_usertest1_exists(setup_test_users):
     result = run_bash_command('getent passwd testuser1')
     assert 'testuser1' in str(result)
+
+def test_check_if_users_exist_in_passwd_file(setup_test_users):
+    # stores user information
+    result = run_bash_command(
+        'sudo cat /etc/passwd | grep -i "testuser"') #let grep match on just testuser
+    assert ('testuser1' in str(result) and 'testuser2' in str(result))
+
+
+def test_check_if_users_exist_in_shaddow_file(setup_test_users):
+    # stores passwords/ authentication
+    result = run_bash_command("sudo cat /etc/shadow | grep -i '\(testuser1\|testuser2\)'")
+    assert ('testuser1' in str(result) and 'testuser2' in str(result))
 
 
 def test_delete_usertest2_and_validate(setup_test_users):
