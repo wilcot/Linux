@@ -16,6 +16,8 @@
 | pwd | (Get-Location).Path | cd | Get the current working directory |
 | [ls](./ls.md) | Get-ChildItem | dir | Get a listing of a directory |
 | rm | Remove-Item | del | Remove an item from the file system |
+| wc | <!-- no clue --> | <!-- no clue --> | Counts words and lines.. why?? |
+| tee | Out-File | <!-- Not certain --> | Exports contents of pipe to a file |
 
 ## User and Groups
 
