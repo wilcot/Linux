@@ -18,6 +18,7 @@
 | rm | Remove-Item | del | Remove an item from the file system |
 | wc | <!-- no clue --> | <!-- no clue --> | Counts words and lines.. why?? |
 | tee | Out-File | <!-- Not certain --> | Exports contents of pipe to a file |
+| type | (Get-Command).Definition | which | Shows information about a command (built in or exec location) |
 
 ## User and Groups
 
