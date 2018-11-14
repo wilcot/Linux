@@ -6,3 +6,4 @@
 | System Configuration Directory | `/etc` | Windows Registry |
 | User Directory | `/home/[username]` | `c:\users\[username]` |
 | | `/var` | |
+| bash configuration | `~/.bashrc` and `etc/profile`| |

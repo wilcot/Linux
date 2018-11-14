@@ -1,3 +1,4 @@
+## Standard Commands
 | Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
 | ---- | ---- | ---- | ---- |
 | [ps](./processes.md#ps), [pidof](./processes.md#pidof), [pgrep](./processes.md#pgrep) | Get-Process | tasklist | Get information about processes | Process Info |
@@ -20,10 +21,14 @@
 | tee | Out-File | <!-- Not certain --> | Exports contents of pipe to a file |
 | type | (Get-Command).Definition | which | Shows information about a command (built in or exec location) |
 
-## User and Groups
+## User and Groups Commands
 
 | Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
 | ---- | ---- | ---- | ---- |
 | useradd, adduser | New-LocalUser (No Linux Support) | net user [username] [password] /add | Add a local user |
 | userdel | Remove-LocalUser (No Linux Support ) | net user [username] /delete | Remove a local user |
 | gentent passwd | Get-LocalUser | | Look up local user | 
+
+## Tips
+- Type `Ctrl+R` in terminal to search the command history. Terminate the search with `Ctrl+G`
+- To escape a frozen ssh session: Press the follow keys in order: Enter (Return key), ~ (tilda), . (period) 
