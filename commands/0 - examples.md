@@ -7,4 +7,5 @@ Things I know how to do on Windows that I want to accomplish on Linux
 
 ``aws ec2 stop-instances --instance-ids `aws ec2 describe-instances | jq -r '.Reservations[0].Instances[0].InstanceId'` ``
 
+ #### How to pass in a list of EC2 instances to aws ec2 stop-instances??
 
