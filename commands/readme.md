@@ -18,7 +18,7 @@
 | [ls](./ls.md) | Get-ChildItem | dir | Get a listing of a directory |
 | rm | Remove-Item | del | Remove an item from the file system |
 | wc | Get-Content \| Measure-Object | <!-- no clue --> | Counts words and lines.. why?? |
-| tee | Out-File | <!-- Not certain --> | Exports contents of pipe to a file |
+| tee | Out-File | <!-- Not certain --> | Split contents of pipe to a file. Can write to both the terminal display and files |
 | type | (Get-Command).Definition | which | Shows information about a command (built in or exec location) |
 
 ## User and Groups Commands
