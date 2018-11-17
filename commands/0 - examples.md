@@ -9,8 +9,8 @@ This works because the back ticks execute the AWS command to lookup an EC2 insta
 
 ``aws ec2 stop-instances --instance-ids `aws ec2 describe-instances | jq -r '.Reservations[0].Instances[0].InstanceId'` ``
 
- #### How to pass in a list of EC2 instances to aws ec2 stop-instances??
-
+ #### Stop all ec2 instances (more of a jq change)
+``aws ec2 stop-instances --instance-ids `aws ec2 describe-instances | jq -r '.Reservations[].Instances[].InstanceId'` ``
 
 ## File Management
 

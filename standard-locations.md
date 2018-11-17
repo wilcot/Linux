@@ -7,4 +7,4 @@
 | User Directory | `/home/[username]` | `c:\users\[username]` |
 | | `/var` | |
 | bash configuration | `~/.bashrc` and `etc/profile`| |
-| disk management | `/etc/fstab` (file system table) | Disk Manager |
+| disk management | `/etc/fstab` (file system table) | Disk Management |
