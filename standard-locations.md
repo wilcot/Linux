@@ -4,7 +4,7 @@
 | Tools and Optional Packages | `/opts` | `c:\program files` (? - no real equivalent) |
 | User database | `/etc/passwd` | |
 | System Configuration Directory | `/etc` | Windows Registry |
-| User Directory | `/home/[username]` | `c:\users\[username]` |
-| | `/var` | |
-| bash configuration | `~/.bashrc` and `etc/profile`| |
 | disk management | `/etc/fstab` (file system table) | Disk Management |
+| User Directory | `/home/[username]` | `c:\users\[username]` |
+| devices | `/var` |  |
+| bash configuration | `~/.bashrc` and `etc/profile`| |
