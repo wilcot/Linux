@@ -6,5 +6,6 @@
 | System Configuration Directory | `/etc` | Windows Registry |
 | disk management | `/etc/fstab` (file system table) | Disk Management |
 | User Directory | `/home/[username]` | `c:\users\[username]` |
-| devices | `/var` |  |
+| Miscelaneous files (?) | `/var` (contains logs, cache and other dirs) |  |
+| devices | (`/dev` |
 | bash configuration | `~/.bashrc` and `etc/profile`| |
