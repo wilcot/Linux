@@ -9,3 +9,4 @@
 | Miscelaneous files (?) | `/var` (contains logs, cache and other dirs) |  |
 | devices | (`/dev` |
 | bash configuration | `~/.bashrc` and `etc/profile`| |
+| system limits configuration | `/cat/security/limits.conf` | |
