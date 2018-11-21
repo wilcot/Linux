@@ -5,6 +5,14 @@ Searches plain-text documents using a regular expression and returns matching li
 
 [Different use cases and switches for grep](https://www.tecmint.com/12-practical-examples-of-linux-grep-command/)
 
+### Flags
+
+`-i` Case insensitive
+
+`-o` Only matching: prints only the matched parts of a line
+
+`-P` Interperts as a PERL regular expression (good for more advanced regex commands)
+
 ### Examples
 Search the yum log for the word 'amazon'. The -i switch will search case insensitively
 
