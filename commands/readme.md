@@ -31,8 +31,8 @@
 
 | Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
 | ---- | ---- | ---- | ---- |
-| mkfs | | | Format / create a file system |
-| wipefs | | | Clear file system |
+| mkfs | Format-Volume | diskpart | Format / create a file system |
+| wipefs | Format-Volume | diskpart | Clear file system |
 | mount | | | Mount file device |
 | umount | | | Un mount device |
 | lsblk | | | Lists all block devices |
