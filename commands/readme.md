@@ -12,8 +12,6 @@
 | cat | Get-Content | | Get entire contents of file |
 | service, systemctl | | | |
 | dmesg | Get-EventLog (No PSCore support) | | Read system log messages |
-| chown | Set-Acl (No PSCore support) | | Change the owner of a file or folder |
-| chmod | Set-Acl (No PSCore support) | | Change the permissions of a file or folder |
 | pwd | (Get-Location).Path | cd | Get the current working directory |
 | [ls](./ls.md) | Get-ChildItem | dir | Get a listing of a directory |
 | rm | Remove-Item | del | Remove an item from the file system |
@@ -28,6 +26,19 @@
 | useradd, adduser | New-LocalUser (No Linux Support) | net user [username] [password] /add | Add a local user |
 | userdel | Remove-LocalUser (No Linux Support ) | net user [username] /delete | Remove a local user |
 | gentent passwd | Get-LocalUser | | Look up local user | 
+
+## File Management Commands
+
+| Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
+| ---- | ---- | ---- | ---- |
+| mkfs | | | Format / create a file system |
+| wipefs | | | Clear file system |
+| mount | | | Mount file device |
+| umount | | | Un mount device |
+| lsblk | | | Lists all block devices |
+| chown | Set-Acl (No PSCore support) | | Change the owner of a file or folder |
+| chmod | Set-Acl (No PSCore support) | | Change the permissions of a file or folder |
+
 
 ## Tips
 - Type `Ctrl+R` in terminal to search the command history. Terminate the search with `Ctrl+G`
