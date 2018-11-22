@@ -43,11 +43,11 @@ sudo mount /dev/nvme1n1 /files # mount the files directory
 #### Identify files with a certain string
 grep can scan an entire directory and return matched files and the hits. Lets find all unit-files that have more than 2 occurrences of network
 
+**Note:** If we don't need the count, we could have accomplished this by just using the l flag on grep which will just return the list of unique files `grep -lR 'network' /lib/systemd/system`
+
 full command: `grep -R 'network' /lib/systemd/system | grep -oP '^(\/.+)(?=:(#| |\w))' | uniq -c | awk '$1>2 {print $2}'`
 
 `grep -R 'network' /lib/systemd/system` Find all instances of the word 'network' under lib/systemd/system. R flag will recurrsively search the directory
-
-**Note:** If we don't need the count, we could have accomplished this by just using the l flag on grep which will just return the list of unique files `grep -lR 'network' /lib/systemd/system`
 
 This outputs something like this:
 ```bash
