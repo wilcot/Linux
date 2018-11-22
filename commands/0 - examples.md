@@ -47,7 +47,9 @@ full command: `grep -R 'network' /lib/systemd/system | grep -oP '^(\/.+)(?=:(#| 
 
 `grep -R 'network' /lib/systemd/system` Find all instances of the word 'network' under lib/systemd/system. R flag will recurrsively search the directory
 
-This outputs a something like this:
+**Note:** If we don't need the count, we could have accomplished this by just using the l flag on grep which will just return the list of unique files `grep -lR 'network' /lib/systemd/system`
+
+This outputs something like this:
 ```bash
 /lib/systemd/system/rpc-statd.service:Wants=network-online.target
 /lib/systemd/system/rpc-statd.service:After=network-online.target nss-lookup.target rpcbind.socket
