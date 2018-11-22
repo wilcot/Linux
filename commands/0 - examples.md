@@ -38,5 +38,37 @@ lsblk -f # but the prettiest way is to use the lsblk command
 sudo mkfs -t xfs /dev/nvme1n1 # format to xfs file system
 sudo mkdir /files # linux requires a directory to mount a file system to. So, lets create a files directory that we can mount ebs volume
 sudo mount /dev/nvme1n1 /files # mount the files directory
+```
+
+#### Identify files with a certain string
+grep can scan an entire directory and return matched files and the hits. Lets find all unit-files that have more than 2 occurrences of network
+
+full command: `grep -R 'network' /lib/systemd/system | grep -oP '^(\/.+)(?=:(#| |\w))' | uniq -c | awk '$1>2 {print $2}'`
+
+`grep -R 'network' /lib/systemd/system` Find all instances of the word 'network' under lib/systemd/system. R flag will recurrsively search the directory
+
+This outputs a something like this:
+```bash
+/lib/systemd/system/rpc-statd.service:Wants=network-online.target
+/lib/systemd/system/rpc-statd.service:After=network-online.target nss-lookup.target rpcbind.socket
+/lib/systemd/system/cloud-config.service:After=network-online.target cloud-config.target
+/lib/systemd/system/cloud-config.service:Wants=network-online.target cloud-config.target
+```
+
+Lets grab just the file names
+`grep -oP '^(\/.+)(?=:(#| |\w))'` The o flag will return only the matched portion of the string, and the P will use the perl regex engine. The pattern is looking for everything up to the first colon.
+
+Now lets count the unique file names:
+`uniq -c` -C will return the count. Output:
 
 ```
+      3 /lib/systemd/system/cloud-init.service
+      2 /lib/systemd/system/cloud-final.service
+      1 /lib/systemd/system/update-motd.service
+      1 /lib/systemd/system/amazon-ssm-agent.service
+      2 /lib/systemd/system/chrony-dnssrv@.service
+      2 /lib/systemd/system/nfs-lock.service
+```
+
+And finally filter it through awk
+`awk '$1>2 {print $2}'` Compares the first column (count) to see if it's greater than 2, and prints the second column (file name) if it's true 
