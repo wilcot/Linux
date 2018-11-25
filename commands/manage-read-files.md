@@ -39,3 +39,16 @@ Remove files and directories from the file system
 
 ## Links
 [On the differences between less vs tail](https://www.brianstorti.com/stop-using-tail/)
+
+## chown
+
+Change owner of a file or directory
+
+takes the parameters \[user id (uid)\]:\[group id (gid)\] to set permissions on specific users/groups
+
+### Examples
+``chown testUser /dir` changes the owner of the directory to testUser
+
+`chown -R testUser:testGroup /dir` change the user owner to testUser and the group owner to testGroup and all subfiles and directories (-R recursively sets permissions)
+
+`chown :testGroup /dir` change the group owner to testGroup
