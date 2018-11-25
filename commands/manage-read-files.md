@@ -44,10 +44,10 @@ Remove files and directories from the file system
 
 Change owner of a file or directory
 
-takes the parameters \[user id (uid)\]:\[group id (gid)\] to set permissions on specific users/groups
+takes the parameters `[user id (uid)]:[group id (gid)]` to set permissions on specific users/groups respectively
 
 ### Examples
-``chown testUser /dir` changes the owner of the directory to testUser
+`chown testUser /dir` changes the owner of the directory to testUser
 
 `chown -R testUser:testGroup /dir` change the user owner to testUser and the group owner to testGroup and all subfiles and directories (-R recursively sets permissions)
 
