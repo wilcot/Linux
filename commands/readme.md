@@ -9,7 +9,7 @@
 | curl | Invoke-WebRequest | | |
 | less, tail | Get-Content -Tail | | Gets the last portions of a file |
 | head | Get-Content -TotalCount | | Gets the first portions of a file |
-| cat | Get-Content | | Get entire contents of file |
+| cat | `Get-Content` (to read files) OR `Add-Content` (to join files) | | Cat stands for concatenate and is officially used to join files. But it is typically used to output a short file |
 | service, systemctl | | | |
 | dmesg | Get-EventLog (No PSCore support) | | Read system log messages |
 | pwd | (Get-Location).Path | cd | Get the current working directory |
@@ -18,7 +18,7 @@
 | wc | Get-Content \| Measure-Object | <!-- no clue --> | Counts words and lines.. why?? |
 | tee | Out-File | <!-- Not certain --> | Split contents of pipe to a file. Can write to both the terminal display and files |
 | type | (Get-Command).Definition | which | Shows information about a command (built in or exec location) |
-
+| xargs | Invoke-Expression | | Allows a command to be processed from the previous output or pipe |
 ## User and Groups Commands
 
 | Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
