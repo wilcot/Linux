@@ -14,7 +14,8 @@
 | Amazon Linux | Built by Amazon to easily work with AWS | RHEL|
 
 ## Package Managers
-2 different types of package managers:
+2 different types of package manager-ish systems:
+
 **package managers**: handle installing of packages locally from a file. Define the archive type and how configuration on how to update a system. Example: RPM and APT
 
 **meta packagers**: wrapper around package manager that allows packages to be downloaded and installed from external sources. Examples: Yum and apt-get
