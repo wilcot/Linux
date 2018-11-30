@@ -5,3 +5,5 @@
 - Unix-Like: Any system that behaves similar to a Unix system. No standard of spec to define what this means. Also called UN*X or *nix. Solaris, MacOS and a bunch other distrobutions are considered Unix-Like systems.
 
 - GNU
+
+- POSIX: Portable Operating System Interface for uniX. Set of standards for how a Unix-like system should behaves
