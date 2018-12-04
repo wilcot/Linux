@@ -10,3 +10,6 @@
 | devices | (`/dev` |
 | bash configuration | `~/.bashrc` and `etc/profile`| |
 | system limits configuration | `/cat/security/limits.conf` | |
+
+
+[Linux spec on directories](http://www.linuxbase.org/betaspecs/fhs/fhs/index.html)

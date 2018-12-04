@@ -11,6 +11,7 @@
 | head | Get-Content -TotalCount | | Gets the first portions of a file |
 | cat | `Get-Content` (to read files) OR `Add-Content` (to join files) | | Cat stands for concatenate and is officially used to join files. But it is typically used to output a short file |
 | service, systemctl | | | |
+| uname | | | Gets information about the kernel / system |
 | dmesg | Get-EventLog (No PSCore support) | | Read system log messages |
 | pwd | (Get-Location).Path | cd | Get the current working directory |
 | [ls](./ls.md) | Get-ChildItem | dir | Get a listing of a directory |
@@ -19,6 +20,7 @@
 | tee | Out-File | <!-- Not certain --> | Split contents of pipe to a file. Can write to both the terminal display and files |
 | type | (Get-Command).Definition | which | Shows information about a command (built in or exec location) |
 | xargs | Invoke-Expression | | Allows a command to be processed from the previous output or pipe |
+
 ## User and Groups Commands
 
 | Linux Command | PowerShell Equivalent | CMD Equivalent | Description |
