@@ -3,13 +3,17 @@
 | System Logs | `/var/log` (access with dmesg or file parsing utility) | `system32\winevt\logs` (access via Event Viewer) |
 | Tools and Optional Packages | `/opts` | `c:\program files` (? - no real equivalent) |
 | User database | `/etc/passwd` | |
+| Password database | `/etc/shadow` | |
+| Group database | `/etc/group` |
 | System Configuration Directory | `/etc` | Windows Registry |
 | disk management | `/etc/fstab` (file system table) | Disk Management |
 | User Directory | `/home/[username]` | `c:\users\[username]` |
 | Miscelaneous files (?) | `/var` (contains logs, cache and other dirs) |  |
-| devices | (`/dev` |
+| devices | (`/dev` | |
 | bash configuration | `~/.bashrc` and `etc/profile`| |
 | system limits configuration | `/cat/security/limits.conf` | |
+| print queue | `/var/spool/cups` | |
+| printer configurations | `/etc/cups/printers.conf` | |
 
 
 [Linux spec on directories](http://www.linuxbase.org/betaspecs/fhs/fhs/index.html)
