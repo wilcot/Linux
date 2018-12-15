@@ -28,6 +28,8 @@
 | useradd, adduser | New-LocalUser (No Linux Support) | net user [username] [password] /add | Add a local user |
 | userdel | Remove-LocalUser (No Linux Support ) | net user [username] /delete | Remove a local user |
 | gentent passwd | Get-LocalUser | | Look up local user | 
+| passwd | | | change a password for a user |
+| gpasswd | | | change a password for a group |
 
 ## File Management Commands
 
